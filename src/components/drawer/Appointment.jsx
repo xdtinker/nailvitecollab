@@ -6,7 +6,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../config/firestore.js";
-
+// fixed minor bugs
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
