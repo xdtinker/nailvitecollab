@@ -19,7 +19,7 @@ const fingerJoints = {
 //   thumb: thumbImg,
 //   index: indexImg,
 //   // ... Other finger images
-// };
+// s};
 
 export const drawHand = (predictions, ctx) => {
   if (predictions.length > 0) {
