@@ -6,6 +6,21 @@ const fingerJoints = {
   pinky: [0, 17, 18, 19, 20],
 };
 
+// // Load images for each fingertip
+// const thumbImg = new Image();
+// thumbImg.src = "./assets/images/thumbs.png";
+//
+// const indexImg = new Image();
+// indexImg.src = "./assets/images/thumbs.png";
+//
+// // ... Load images for other fingers
+//
+// const fingerImages = {
+//   thumb: thumbImg,
+//   index: indexImg,
+//   // ... Other finger images
+// };
+
 export const drawHand = (predictions, ctx) => {
   if (predictions.length > 0) {
     predictions.forEach((pred) => {
