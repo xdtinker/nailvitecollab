@@ -19,8 +19,9 @@ const Picks = () => {
 
   const [data, setData] = useState([]);
 
-  const addPicks = async () => {
+  const setAppointment = async (e) => {
     try {
+      e.preventDefault();
       const docRef = await addDoc(collection(db, "col_appointment"), {
         name: name,
         phoneNumber: phoneNumber,
@@ -67,13 +68,13 @@ const Picks = () => {
           >
             <div className="mx-auto max-w-2xl px-4 lg:max-w-none lg:px-0">
               <h2 id="summary-heading" className="sr-only">
-                Order summary
+                Picks summary
               </h2>
 
               <dl>
                 <dt className="text-sm font-medium">Amount due</dt>
                 <dd className="mt-1 text-3xl font-bold tracking-tight text-white">
-                  $232.00
+                  $0.00
                 </dd>
               </dl>
 
@@ -128,7 +129,7 @@ const Picks = () => {
               Payment and shipping details
             </h2>
 
-            <form>
+            <form onSubmit={setAppointment}>
               <div className="mx-auto max-w-2xl px-4 lg:max-w-none lg:px-0">
                 <div>
                   <h3
@@ -221,7 +222,6 @@ const Picks = () => {
                   <button
                     type="submit"
                     className="flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
-                    onClick={addPicks}
                   >
                     <svg
                       width="60pt"

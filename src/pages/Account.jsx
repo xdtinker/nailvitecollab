@@ -1,5 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
-import { Profile, Appointment } from "../components/account";
+import { Profile, Appointment, Chat } from "../components/account";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import {
@@ -8,6 +8,7 @@ import {
   XMarkIcon,
   ArrowLeftOnRectangleIcon,
   UserIcon,
+  ChatBubbleOvalLeftEllipsisIcon,
 } from "@heroicons/react/24/outline";
 
 const navigation = [
@@ -16,6 +17,12 @@ const navigation = [
     name: "Appointment",
     href: "/account/appointment",
     icon: CalendarIcon,
+    current: false,
+  },
+  {
+    name: "Chat",
+    href: "/account/chat",
+    icon: ChatBubbleOvalLeftEllipsisIcon,
     current: false,
   },
 ];
@@ -262,6 +269,7 @@ const Account = () => {
             <Routes>
               <Route path="/profile" element={<Profile />} />
               <Route path="/appointment" element={<Appointment />} />
+              <Route path="/chat" element={<Chat />} />
             </Routes>
           </div>
         </main>

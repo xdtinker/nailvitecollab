@@ -38,7 +38,7 @@ export const drawHand = (predictions, ctx) => {
         const y = landmarks[i][1];
         // const z = landmarks[i][2];
 
-        const size = 5;
+        const size = 10;
 
         // Drawing landmark points
         ctx.beginPath();

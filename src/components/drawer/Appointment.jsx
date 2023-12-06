@@ -19,8 +19,8 @@ function classNames(...classes) {
 const Appointment = () => {
   const [data, setData] = useState([]);
 
-  const fetchPicks = async () => {
-    const querySnapshot = await getDocs(collection(db, "col_picks"));
+  const fetchAppointment = async () => {
+    const querySnapshot = await getDocs(collection(db, "col_appointment"));
     const data = querySnapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
@@ -29,7 +29,7 @@ const Appointment = () => {
   };
 
   useEffect(() => {
-    fetchPicks();
+    fetchAppointment();
   }, []);
   return (
     <>
@@ -99,21 +99,13 @@ const Appointment = () => {
               <div className="flex justify-between gap-x-4 py-3">
                 <dt className="text-gray-500">Appointment date</dt>
                 <dd className="text-gray-700">
-                  <time dateTime={apt.name}>{apt.name}</time>
+                  <time dateTime={apt.name}>{apt.value.startDate}</time>
                 </dd>
               </div>
               <div className="flex justify-between gap-x-4 py-3">
                 <dt className="text-gray-500">Paid amount</dt>
                 <dd className="flex items-start gap-x-2">
-                  <div className="font-medium text-gray-900">{apt.name}</div>
-                  <div
-                    className={classNames(
-                      statuses[apt.name],
-                      "rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset",
-                    )}
-                  >
-                    {apt.name}
-                  </div>
+                  <div className="font-medium text-gray-900">P 0.00</div>
                 </dd>
               </div>
             </dl>
