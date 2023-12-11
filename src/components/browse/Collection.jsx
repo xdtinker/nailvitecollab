@@ -24,18 +24,18 @@ const Collection = ({ data }) => {
           <h2 className="text-xl font-bold text-gray-900">Collection</h2>
           <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
             {data.map((item) => (
-              <div key={item.id}>
+              <div key={item.serviceId}>
                 <div className="relative">
                   <div className="relative h-72 w-full overflow-hidden rounded-lg">
                     <img
-                      src={item.imageSrc}
-                      alt={item.name}
+                      src={item.imgSource}
+                      alt={item.serviceName}
                       className="h-full w-full object-cover object-center"
                     />
                   </div>
                   <div className="relative mt-4">
                     <h3 className="text-sm font-medium text-gray-900">
-                      {item.name}
+                      {item.serviceName}
                     </h3>
                     {/*<p className="mt-1 text-sm text-gray-500">{item.category}</p>*/}
                   </div>

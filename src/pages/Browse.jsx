@@ -1,20 +1,18 @@
 import { Heading } from "../components";
 import { Collection } from "../components/browse";
-
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../config/firestore.js";
 import { useState, useEffect } from "react";
-
+import serviceAPI from "../services/_service.js";
 const Browse = () => {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
-    const querySnapshot = await getDocs(collection(db, "collabcol"));
-    const data = querySnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
-    setData(data);
+    try {
+      const services = await serviceAPI.getAllServices();
+      setData(services);
+    } catch (error) {
+      // Handle error
+      console.error("Error fetching services:", error);
+    }
   };
 
   useEffect(() => {
