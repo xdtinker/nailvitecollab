@@ -37,8 +37,9 @@ const Navbar = () => {
       >
         <ARCam />
       </Modal>
-      <div className="bg-white pt-12 sm:pt-16 lg:pt-24">
-        <nav className="fixed bottom-0 left-0 right-0 z-10 mx-auto w-full sm:max-w-md">
+      <div className="bg-white pt-12 sm:pt-16 lg:pt-24 max-h-screen flex flex-col">
+        {/*<nav className="fixed bottom-0 left-0 right-0 z-10 mx-auto w-full sm:max-w-md">*/}
+        <nav className="fixed bottom-0 left-0 right-0 mx-auto w-full sm:max-w-md">
           <a
             onClick={() => toggleBtn(isModalOpen, setIsModalOpen)}
             className="absolute -top-7 left-1/2 flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-3xl bg-indigo-500 text-white shadow-lg transition duration-100 hover:bg-indigo-600 sm:-top-8 sm:h-16 sm:w-16"

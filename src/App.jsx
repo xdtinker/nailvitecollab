@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Navbar, Footer } from "./components";
-import { Home, Browse, Account, Auth } from "./pages";
+import { Navbar } from "./components";
+import { Home, Browse, Account, Login } from "./pages";
 import "./App.css";
 const RenderNavbar = () => {
   const currentPath = window.location.pathname;
@@ -17,10 +17,10 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/browse" element={<Browse />} />
         <Route path="/account/*" element={<Account />} />
-        <Route path="/auth" element={<Auth />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <RenderNavbar />
-      <Footer />
+      {/*<Footer />*/}
     </Router>
   );
 };
